@@ -762,6 +762,11 @@ tbody tr:last-child td{ border-bottom:none; }
 @media (max-width:480px){ #lmap{ height:290px; } }
 footer{ max-width:1060px; margin:0 auto; padding:0 16px 46px; color:var(--sub); font-size:12px; }
 footer ul{ margin:6px 0 0 18px; } footer li{ margin-bottom:3px; }
+/* 주관·협력 기관 로고 스트립 (main과 footer 사이) */
+.logos{ max-width:1060px; margin:14px auto 4px; padding:0 16px; }
+.logos-inner{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 24px; display:flex; align-items:center; justify-content:center; gap:46px; flex-wrap:wrap; }
+.logos-inner img{ height:38px; width:auto; display:block; }
+@media (max-width:520px){ .logos-inner{ gap:24px; padding:16px } .logos-inner img{ height:28px } }
 @media print{
   .controls, .roster, #clear, .mapcard{ display:none !important; }
   body{ background:#fff; } .card{ break-inside:avoid; border:1px solid #ccc; }
@@ -810,6 +815,11 @@ footer ul{ margin:6px 0 0 18px; } footer li{ margin-bottom:3px; }
  </div>
 </header>
 <main id="app"></main>
+<div class="logos"><div class="logos-inner">
+  <img src="logo/kice.png" alt="한국교육과정평가원 KICE">
+  <img src="logo/cne.png" alt="충청남도교육청">
+  <img src="logo/iscream.png" alt="i-Scream media">
+</div></div>
 <footer>
   <b>참고 사항</b>
   <ul>
