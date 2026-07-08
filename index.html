@@ -711,8 +711,11 @@ td{ padding:8px 10px; border-bottom:1px solid #eef0f3; vertical-align:middle; ov
 .t-sched th:nth-child(2), .t-sched td:nth-child(2){ width:104px; }
 .t-sched th:nth-child(3), .t-sched td:nth-child(3){ width:74px; }
 .t-sched th:nth-child(4), .t-sched td:nth-child(4){ width:auto; white-space:normal; }
-.t-sched th:nth-child(5), .t-sched td:nth-child(5){ width:116px; text-align:center; }
-.t-sched th:nth-child(6), .t-sched td:nth-child(6){ width:116px; text-align:center; }
+.t-sched th:nth-child(5), .t-sched td:nth-child(5){ width:116px; }
+.t-sched th:nth-child(6), .t-sched td:nth-child(6){ width:116px; }
+/* 주강사·보조강사 정렬은 nth-child(rowspan에 밀림) 대신 셀 클래스 기준 */
+.t-sched th:nth-child(5), .t-sched th:nth-child(6){ text-align:center; }
+.t-sched td.rc{ text-align:center; }
 /* 검색 결과 표(8열): 기수+장소 열을 넓히고 줄바꿈 허용 → 과목과 겹침 방지 */
 .t-search{ min-width:880px; }
 .t-search th:nth-child(1), .t-search td:nth-child(1){ width:150px; white-space:normal; }
@@ -1020,7 +1023,7 @@ function renderSubject(subj){
     h += '<td>'+SPECIAL.t+'</td><td>'+SPECIAL.c+'</td><td class="topic">'+SPECIAL.p+'</td>';
     h += '<td colspan="2" class="prof">'+(g.prof?esc(g.prof):'<span class="na">—</span>')+'</td></tr>';
     const s1 = SESS[1][0], r1j = resolve(dd[0].ju,1), r1b = resolve(dd[0].bo,1);
-    h += '<tr><td>'+s1.t+'</td><td>'+s1.c+'</td><td class="topic">'+s1.p+'</td><td>'+roleCellHTML(r1j)+'</td><td>'+roleCellHTML(r1b)+'</td></tr>';
+    h += '<tr><td>'+s1.t+'</td><td>'+s1.c+'</td><td class="topic">'+s1.p+'</td><td class="rc">'+roleCellHTML(r1j)+'</td><td class="rc">'+roleCellHTML(r1b)+'</td></tr>';
     // 2·3일차
     [2,3].forEach(day => {
       const sess = SESS[day], n = sess.length, d0 = dd[day-1];
@@ -1030,8 +1033,8 @@ function renderSubject(subj){
         if (i===0) h += '<td rowspan="'+n+'" class="dcell"><b>'+day+'일차</b><br>'+fmtDate(g.dates[day-1],false)+'</td>';
         h += '<td>'+sess[i].t+'</td><td>'+sess[i].c+'</td><td class="topic">'+sess[i].p+'</td>';
         [rj,rb].forEach(r => {
-          if (r.m === 'per') h += '<td>'+nameHTML(r.a[i])+'</td>';
-          else if (i===0) h += '<td rowspan="'+n+'" class="span">'+roleCellHTML(r)+'</td>';
+          if (r.m === 'per') h += '<td class="rc">'+nameHTML(r.a[i])+'</td>';
+          else if (i===0) h += '<td rowspan="'+n+'" class="span rc">'+roleCellHTML(r)+'</td>';
         });
         h += '</tr>';
       }
