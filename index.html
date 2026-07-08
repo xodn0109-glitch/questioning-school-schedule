@@ -762,13 +762,6 @@ tbody tr:last-child td{ border-bottom:none; }
 @media (max-width:480px){ #lmap{ height:290px; } }
 footer{ max-width:1060px; margin:0 auto; padding:0 16px 46px; color:var(--sub); font-size:12px; }
 footer ul{ margin:6px 0 0 18px; } footer li{ margin-bottom:3px; }
-/* 주관·협력 기관 로고 스트립 (main과 footer 사이) */
-.logos{ max-width:1060px; margin:2.8px auto 4px; padding:0 16px; }
-.logos-inner{ --logo-h:38px; background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 24px; display:flex; align-items:center; justify-content:center; gap:46px; flex-wrap:wrap; }
-.logos-inner img{ height:var(--logo-h); width:auto; display:block; }
-.logos-inner img.lg-kice{ height:calc(var(--logo-h) * 0.8); }
-.logos-inner img.lg-iscream{ height:calc(var(--logo-h) * 1.15); }
-@media (max-width:520px){ .logos-inner{ --logo-h:28px; gap:24px; padding:16px } }
 @media print{
   .controls, .roster, #clear, .mapcard{ display:none !important; }
   body{ background:#fff; } .card{ break-inside:avoid; border:1px solid #ccc; }
@@ -817,11 +810,6 @@ footer ul{ margin:6px 0 0 18px; } footer li{ margin-bottom:3px; }
  </div>
 </header>
 <main id="app"></main>
-<div class="logos"><div class="logos-inner">
-  <img src="logo/kice.png" class="lg-kice" alt="한국교육과정평가원 KICE">
-  <img src="logo/cne.png" alt="충청남도교육청">
-  <img src="logo/iscream.png" class="lg-iscream" alt="i-Scream media">
-</div></div>
 <footer>
   <b>참고 사항</b>
   <ul>
