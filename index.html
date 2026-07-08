@@ -726,6 +726,8 @@ td{ padding:8px 10px; border-bottom:1px solid #eef0f3; vertical-align:middle; ov
 .t-search td:nth-child(1) .loc{ display:inline-block; line-height:1.35; }
 tbody tr:last-child td{ border-bottom:none; }
 .dcell{ background:#fbfcfd; border-right:1px solid #eef0f3; white-space:nowrap; color:#334155; }
+/* 일차(날짜) 경계선 강조: 일차·날짜 셀이 있는 행 위에 진한 구분선 */
+.t-sched tbody tr:has(td.dcell) td{ border-top:2px solid #cbd2da; }
 .topic{ color:#334155; }
 .prof{ text-align:center; color:var(--c-특강); font-weight:600; background:#f8fafc; }
 .span{ background:#fffdf5; }
