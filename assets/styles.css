@@ -64,7 +64,7 @@ tbody tr:last-child td{ border-bottom:none; }
 /* 일차(날짜) 경계선 강조: 일차·날짜 셀이 있는 행 위에 진한 구분선 */
 .t-sched tbody tr:has(td.dcell) td{ border-top:2px solid #cbd2da; }
 .topic{ color:#334155; }
-.prof{ text-align:center; color:var(--c-특강); font-weight:600; background:#f8fafc; }
+.prof{ text-align:center; color:var(--c-특강); font-weight:600; }
 .span{ background:#fffdf5; }
 .na{ color:#b6bcc6; }
 .dup{ background:#fdeaea; color:#c0392b; border-radius:5px; padding:0 5px; font-size:11px; font-weight:700; white-space:nowrap; }
